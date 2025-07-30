@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +11,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        
+
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-Dark warna2 absolute">
-        <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-Dark warna2 sticky-top">
+        <div class="container d-flex justify-content-between">
             <a class="navbar-brand" href="#"><img src="asset/logo merstore.png" width="200px" alt=""></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -39,283 +41,289 @@
                         <a class="nav-link" href="src/blog.html">blog</a>
                     </li>
                 </ul>
-                <div class="d-flex">
-                    <a href="#" class="btn btn-primary"><i class="fas fa-user"></i> Akun</a>
-                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <div class="wave-top">
-    <section class="hero-section text-center wave-bottom">
-        <div class="container">
-            <h1 class="display-4 fw-bold mb-4">Temukan Oleh-Oleh Khas Jogja Disini</h1>
-            <p class="lead mb-5">Lebih dari puluhan produk berkualitas dengan harga terbaik</p>
-            <div class="search-box">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Cari produk...">
-                    <button class="btn btn-primary" type="button"><i class="fas fa-search"></i> Cari</button>
+        <section class="hero-section text-center wave-bottom">
+            <div class="container">
+                <h1 class="display-4 fw-bold mb-4">Temukan Oleh-Oleh Khas Jogja Disini</h1>
+                <p class="lead mb-5">Lebih dari puluhan produk berkualitas dengan harga terbaik</p>
+                <div class="search-box">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Cari produk...">
+                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i> Cari</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     </div>
 
     <!-- Filter Section -->
-    <section class="container ml-10 mb-5 warna1">
-        <div class="row ml-5 warna1"> </div>
-            <div class="col">
-                <div class="d-flex justify-content-between mb-4">
-                    <h2>Produk Terpopuler</h2>
-                    <div class="dropdown">
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Harga Terendah</a></li>
-                            <li><a class="dropdown-item" href="#">Harga Tertinggi</a></li>
-                            <li><a class="dropdown-item" href="#">Terbaru</a></li>
-                            <li><a class="dropdown-item" href="#">Populer</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="row warna1">
-                    <!-- Product 1 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card product-card h-100">
-                            <div class="position-relative">
-                                <img src="asset/Ampyang Kelapa.png" class="card-img-top product-img" alt="Smartphone terbaru dengan layar 6.5 inci warna biru metalik">
-                                
-                            </div>
-                            <div class="card-body">
-                                
-                                <h5 class="card-title">Ampyang Kelapa</h5>
-                                <p class="card-text text-muted">Ampyang kelapa muda enak bahan kelapa muda dan gula tahan sampai 1 bulan aman dikirim ke seluruh indonesia</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <span class="text-danger fw-bold">Rp 25.000</span>
-                                        
-                                    </div>
-                                    <span class="text-warning"><i class="fas fa-star"></i> 4.8</span>
-                                </div>
-                            </div>
-                            <div class="card-footer bg-transparent">
-                                <button class="btn btn-outline-primary w-100"><i class="fas fa-cart-plus"></i> Pesan Sekarang</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Product 2 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card product-card h-100">
-                            <img src="asset/Bakpia Aneka rasa.png" class="card-img-top product-img" alt="Jam tangan analog mewah dengan tali kulit hitam">
-                            <div class="card-body">
-                                
-                                <h5 class="card-title">Bakpia Basah Aneka Rasa</h5>
-                                <p class="card-text text-muted">Bakpia Kering aneka rasa isi 20 pcs tahan sampai 1 bulan pengiriman stock baru </p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <span class="text-danger fw-bold">Rp 52.000</span>
-                                    </div>
-                                    <span class="text-warning"><i class="fas fa-star"></i> 4.7</span>
-                                </div>
-                            </div>
-                            <div class="card-footer bg-transparent">
-                                <button class="btn btn-outline-primary w-100"><i class="fas fa-cart-plus"></i> pesan Sekarang</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Product 3 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card product-card h-100">
-                            <div class="position-relative">
-                                <img src="asset/dodol 1kg.jpg" class="card-img-top product-img" alt="Blender kaca stainless steel dengan 5 tingkat kecepatan">
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Jenang dodol 1kg</h5>
-                                <p class="card-text text-muted">Blender dengan 5 tingkat kecepatan dan gelas kaca tahan panas</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <span class="text-danger fw-bold">Rp 52.000</span>
-                                    </div>
-                                    <span class="text-warning"><i class="fas fa-star"></i> 4.9</span>
-                                </div>
-                            </div>
-                            <div class="card-footer bg-transparent">
-                                <button class="btn btn-outline-primary w-100"><i class="fas fa-cart-plus"></i> Pesan Sekarang</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Product 4 -->
-                    <div class="col-lg-4 col-md-6">
-                                    <div class="card product-card h-100">
-                            <img src="asset/Geplak.png" class="card-img-top product-img" alt="Sepatu lari warna merah dengan sol bantalan udara">
-                            <div class="card-body">
-                                <h5 class="card-title">Geplak bantul</h5>
-                                <p class="card-text text-muted">Geplak manis packing Dos  500gram isi 23-25pcs tahan sampai 14 hari</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <span class="fw-bold text-danger">Rp 32.000</span>
-                                    </div>
-                                    <span class="text-warning"><i class="fas fa-star"></i> 4.8</span>
-                                </div>
-                            </div>
-                            <div class="card-footer bg-transparent">
-                                <button class="btn btn-outline-primary w-100"><i class="fas fa-cart-plus"></i> Pesan Sekarang</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Product 5 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card product-card h-100">
-                            <img src="asset/jenang dan krasikan 1kg.jpg" class="card-img-top product-img" alt="Speaker portable dengan LED warna-warni dan baterai tahan lama">
-                            <div class="card-body">
-                                <div class="mb-2">
-                                </div>
-                                <h5 class="card-title">Jenang dodol krasikan</h5>
-                                <p class="card-text text-muted">Campur (jenang + trasikan) tahan sampai 1 bulan di suhu ruang sejak kirim PENGIRIMAN STOCK BARU</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <span class="fw-bold text-danger">Rp 52.000</span>
-                                    </div>
-                                    <span class="text-warning"><i class="fas fa-star"></i> 4.9</span>
-                                </div>
-                            </div>
-                            <div class="card-footer bg-transparent">
-                                <button class="btn btn-outline-primary w-100"><i class="fas fa-cart-plus"></i> Pesan Sekarang</button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Product 6 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card product-card h-100">
-                            <div class="position-relative">
-                                <img src="asset/Madu Mongso.png" class="card-img-top product-img" alt="Panci masak set lengkap 5 pcs anti lengket">
-                            </div>
-                            <div class="card-body">
-                                <div class="mb-2">
-                                </div>
-                                <h5 class="card-title">Madu mongso 500gram</h5>
-                                <p class="card-text text-muted">berat 500 gram isi 29-30 pcs tahan sampai 6 bulan tanpa bahan pengawet dan tanpa pemanis buatanenak manis asem</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <span class="text-danger fw-bold">Rp 35.000</span>
-                                    </div>
-                                    <span class="text-warning"><i class="fas fa-star"></i> 4.8</span>
-                                </div>
-                            </div>
-                            <div class="card-footer bg-transparent">
-                                <button class="btn btn-outline-primary w-100"><i class="fas fa-cart-plus"></i> Pesan Sekarang</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                
+    <section class="container ml-10 mb-5">
+        <div class="col">
+            <div class="d-flex justify-content-between mb-4">
+                <h2>Produk Terpopuler</h2>
             </div>
+
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card product-card h-100">
+                        <div class="position-relative">
+                            <img src="asset/Ampyang Kelapa.png" class="card-img-top product-img"
+                                alt="Smartphone terbaru dengan layar 6.5 inci warna biru metalik">
+
+                        </div>
+                        <div class="card-body">
+
+                            <h5 class="card-title">Ampyang Kelapa</h5>
+                            <p class="card-text text-muted">Ampyang kelapa muda enak bahan kelapa muda dan gula tahan
+                                sampai 1 bulan aman dikirim ke seluruh indonesia</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="text-danger fw-bold">Rp 25.000</span>
+
+                                </div>
+                                <span class="text-warning"><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-outline-primary w-100"><i class="fas fa-cart-plus"></i> Pesan
+                                Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="asset/Bakpia Aneka rasa.png" class="card-img-top product-img"
+                            alt="Jam tangan analog mewah dengan tali kulit hitam">
+                        <div class="card-body">
+
+                            <h5 class="card-title">Bakpia Basah Aneka Rasa</h5>
+                            <p class="card-text text-muted">Bakpia Kering aneka rasa isi 20 pcs tahan sampai 1 bulan
+                                pengiriman stock baru </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="text-danger fw-bold">Rp 52.000</span>
+                                </div>
+                                <span class="text-warning"><i class="fas fa-star"></i> 4.7</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-outline-primary w-100"><i class="fas fa-cart-plus"></i> pesan
+                                Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card product-card h-100">
+                        <div class="position-relative">
+                            <img src="asset/dodol 1kg.jpg" class="card-img-top product-img"
+                                alt="Blender kaca stainless steel dengan 5 tingkat kecepatan">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Jenang dodol 1kg</h5>
+                            <p class="card-text text-muted">Blender dengan 5 tingkat kecepatan dan gelas kaca tahan
+                                panas</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="text-danger fw-bold">Rp 52.000</span>
+                                </div>
+                                <span class="text-warning"><i class="fas fa-star"></i> 4.9</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-outline-primary w-100"><i class="fas fa-cart-plus"></i> Pesan
+                                Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="asset/Geplak.png" class="card-img-top product-img"
+                            alt="Sepatu lari warna merah dengan sol bantalan udara">
+                        <div class="card-body">
+                            <h5 class="card-title">Geplak bantul</h5>
+                            <p class="card-text text-muted">Geplak manis packing Dos 500gram isi 23-25pcs tahan sampai
+                                14 hari</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold text-danger">Rp 32.000</span>
+                                </div>
+                                <span class="text-warning"><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-outline-primary w-100"><i class="fas fa-cart-plus"></i> Pesan
+                                Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="asset/jenang dan krasikan 1kg.jpg" class="card-img-top product-img"
+                            alt="Speaker portable dengan LED warna-warni dan baterai tahan lama">
+                        <div class="card-body">
+                            <div class="mb-2">
+                            </div>
+                            <h5 class="card-title">Jenang dodol krasikan</h5>
+                            <p class="card-text text-muted">Campur (jenang + trasikan) tahan sampai 1 bulan di suhu
+                                ruang sejak kirim PENGIRIMAN STOCK BARU</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="fw-bold text-danger">Rp 52.000</span>
+                                </div>
+                                <span class="text-warning"><i class="fas fa-star"></i> 4.9</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-outline-primary w-100"><i class="fas fa-cart-plus"></i> Pesan
+                                Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card product-card h-100">
+                        <div class="position-relative">
+                            <img src="asset/Madu Mongso.png" class="card-img-top product-img"
+                                alt="Panci masak set lengkap 5 pcs anti lengket">
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-2">
+                            </div>
+                            <h5 class="card-title">Madu mongso 500gram</h5>
+                            <p class="card-text text-muted">berat 500 gram isi 29-30 pcs tahan sampai 6 bulan tanpa
+                                bahan pengawet dan tanpa pemanis buatanenak manis asem</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="text-danger fw-bold">Rp 35.000</span>
+                                </div>
+                                <span class="text-warning"><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent">
+                            <button class="btn btn-outline-primary w-100"><i class="fas fa-cart-plus"></i> Pesan
+                                Sekarang</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
         </div>
     </section>
 
     <!-- Features Section -->
     <div class="wave-top" style="--bs-bg-opacity: .5">
-    <section class="warna1 py-5 wave-bottom ">
-        <div class="container text-center warna1">
-            <h2 class="mb-5">Kenapa Belanja di Kami?</h2>
-            <div class="row">
-                <div class="col-md-3 mb-4">
-                    <div class="p-4 border bg-white rounded">
-                        <i class="fas fa-shipping-fast fa-3x mb-3 text-primary"></i>
-                        <h5>Pengantaran Cepat</h5>
-                        <p class="text-muted">Pengiriman sampai seluruh wilayah Indonesia</p>
+        <section class="warna1 py-5 wave-bottom ">
+            <div class="container text-center warna1">
+                <h2 class="mb-5">Kenapa Belanja di Kami?</h2>
+                <div class="row">
+                    <div class="col-md-3 mb-4">
+                        <div class="p-4 border bg-white rounded">
+                            <i class="fas fa-shipping-fast fa-3x mb-3 text-primary"></i>
+                            <h5>Pengantaran Cepat</h5>
+                            <p class="text-muted">Pengiriman sampai seluruh wilayah Indonesia</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="p-4 border bg-white rounded">
-                        <i class="fas fa-exchange-alt fa-3x mb-3 text-primary"></i>
-                        <h5>Pengembalian Mudah</h5>
-                        <p class="text-muted">Garansi pengembalian dan uang kembali tanpa pertanyaan</p>
+                    <div class="col-md-3 mb-4">
+                        <div class="p-4 border bg-white rounded">
+                            <i class="fas fa-exchange-alt fa-3x mb-3 text-primary"></i>
+                            <h5>Pengembalian Mudah</h5>
+                            <p class="text-muted">Garansi pengembalian dan uang kembali tanpa pertanyaan</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="p-4 border bg-white rounded">
-                        <i class="fas fa-lock fa-3x mb-3 text-primary"></i>
-                        <h5>Pembayaran Aman</h5>
-                        <p class="text-muted">Sistem pembayaran terlindungi dan terjamin</p>
+                    <div class="col-md-3 mb-4">
+                        <div class="p-4 border bg-white rounded">
+                            <i class="fas fa-lock fa-3x mb-3 text-primary"></i>
+                            <h5>Pembayaran Aman</h5>
+                            <p class="text-muted">Sistem pembayaran terlindungi dan terjamin</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3 mb-4">
-                    <div class="p-4 border bg-white rounded">
-                        <i class="fas fa-headset fa-3x mb-3 text-primary"></i>
-                        <h5>Dukungan 24/7</h5>
-                        <p class="text-muted">Tim customer service siap membantu kapan saja</p>
+                    <div class="col-md-3 mb-4">
+                        <div class="p-4 border bg-white rounded">
+                            <i class="fas fa-headset fa-3x mb-3 text-primary"></i>
+                            <h5>Dukungan 24/7</h5>
+                            <p class="text-muted">Tim customer service siap membantu kapan saja</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <div class="wave-top warna2">
-    <footer class="footer wave-bottom warna2">
-        <div class="container warna2">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h5 class="mb-4">KatalogKu</h5>
-                    <p>Toko online terpercaya dengan berbagai produk berkualitas dan harga terjangkau.</p>
-                    <div class="mt-4">
-                        <a href="#" class="text-dark me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-dark me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-dark"><i class="fab fa-linkedin-in"></i></a>
+        <!-- Footer -->
+        <div class="wave-top warna2">
+            <footer class="footer wave-bottom warna2">
+                <div class="container warna2">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <h5 class="mb-4">KatalogKu</h5>
+                            <p>Toko online terpercaya dengan berbagai produk berkualitas dan harga terjangkau.</p>
+                            <div class="mt-4">
+                                <a href="#" class="text-dark me-3"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-dark me-3"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-dark"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <h6 class="mb-4">Tautan Cepat</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="index.html" class="text-muted">Beranda</a></li>
+                                <li class="mb-2"><a href="src/katalog.html" class="text-muted">katalog</a></li>
+                                <li class="mb-2"><a href="src/tentangkami.html" class="text-muted">Tentang Kami</a></li>
+                                <li class="mb-2"><a href="src/kontak.html" class="text-muted">Kontak</a></li>
+                                <li class="mb-2"><a href="src/blog.html" class="text-muted">Blog</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <h6 class="mb-4">Bantuan</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#" class="text-muted">Cara Berbelanja</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">Pembayaran</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">Pengiriman</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">Pengembalian</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <h6 class="mb-4">Kontak</h6>
+                            <ul class="list-unstyled text-muted">
+                                <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Yogyakarta, Indonesia</li>
+                                <li class="mb-2"><i class="fas fa-phone me-2"></i> +62 817 9392 239</li>
+                                <li class="mb-2"><i class="fas fa-envelope me-2"></i> merstorejogja@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr class="mt-5">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start">
+                            <p class="text-muted mb-0">&copy; 2025 Mer Store. All rights reserved.</p>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <a href="#" class="text-muted me-3">Syarat & Ketentuan</a>
+                            <a href="#" class="text-muted">Kebijakan Privasi</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h6 class="mb-4">Tautan Cepat</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="index.html" class="text-muted">Beranda</a></li>
-                        <li class="mb-2"><a href="src/katalog.html" class="text-muted">katalog</a></li>
-                        <li class="mb-2"><a href="src/tentangkami.html" class="text-muted">Tentang Kami</a></li>
-                        <li class="mb-2"><a href="src/kontak.html" class="text-muted">Kontak</a></li>
-                        <li class="mb-2"><a href="src/blog.html" class="text-muted">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h6 class="mb-4">Bantuan</h6>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-muted">Cara Berbelanja</a></li>
-                        <li class="mb-2"><a href="#" class="text-muted">Pembayaran</a></li>
-                        <li class="mb-2"><a href="#" class="text-muted">Pengiriman</a></li>
-                        <li class="mb-2"><a href="#" class="text-muted">Pengembalian</a></li>
-                        <li class="mb-2"><a href="#" class="text-muted">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h6 class="mb-4">Kontak</h6>
-                    <ul class="list-unstyled text-muted">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Yogyakarta, Indonesia</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> +62 817 9392 239</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> merstorejogja@gmail.com</li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="mt-5">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <p class="text-muted mb-0">&copy; 2025 Mer Store. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <a href="#" class="text-muted me-3">Syarat & Ketentuan</a>
-                    <a href="#" class="text-muted">Kebijakan Privasi</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+            </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- Bootstrap JS -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
