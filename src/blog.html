@@ -1,11 +1,498 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tentang Kami - Perusahaan Kami</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: #ffffff;
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #F0BB78 0%, 100%), url('../asset/logo\ mer\ brownies.jpg') center/cover no-repeat;
+            color: white;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-color: white;
+            transform: skewY(-2deg);
+            z-index: 1;
+        }
+
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .about-features {
+            background-color: #f9fafb;
+            padding: 80px 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .team-section {
+            padding: 80px 0;
+        }
+
+        .team-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-img {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .values-section {
+            padding: 80px 0;
+            background-color: #f9fafb;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover {
+            background-color: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 80px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg warna2 absolute">
+        <div class="container warna2">
+            <a class="navbar-brand" href="#"><img src="../asset/logo merstore.png" width="200px" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="katalog.html">katalog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tentangkami.html">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kontak.html">Kontak</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center position-relative z-2">
+            <h1 class="display-4 fw-bold mb-4">Tentang Perusahaan Kami</h1>
+            <p class="lead mb-5 mx-auto" style="max-width: 700px;">Kami adalah tim profesional yang berdedikasi untuk
+                memberikan solusi inovatif bagi kebutuhan bisnis Anda.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col mb-4 mb-lg-0">
+                    <h2 class="section-title text-center text-lg-start">Perjalanan Usaha kami</h2>
+                    <p>
+                        PERJALANAN USAHA SAMPAI DENGAN MENGIKUTI PROGRAM INKUBASI BISNIS 2025
+                        <br><br>
+                        Bicara mengenai perjalanan usaha awal mula saya memulai usaha pada tahun 2010 dimana saat itu saya bersama 4 teman mahasiswa kelas malam Fakultas Ekonomi Manajemen Perusahaan Universitas Janabadra Yogyakarta mengikuti Lomba Wirausaha Mahasiswa yang diadakan oleh DIKTI dan DISPORA Yogyakarta waktu itu kami membuat bisnis plan KCT CASSAVA dengan produk BROWNIES CASSAVA dan CASSAVA CAKE. Dan yang tak pernah kami sangka adalah kami mendapatkan dana hibah tersebut, padahal saya ingat betul drama malam sebelum pengumpulan bisnis plan yang entah bagaimana data kami di computer hilang, kami menyadari di pagi harinya ketika akan mencetak. Sedang tenggang pengumpulan bisnis plan itu jam 13.00 wib, pagi itu kami langsung membuatnya lagi dengan sisa sisa data yang ada di computer dan diingatan kami, berkejar-kejaran dengan waktu karna kami tidak mau menyerah begitu saja setelah perjuangan kami dalam mengerjakannya. Berhari-hari kami lembur sampai jam 03.00 wib pagi kami kerja, malam kami kuliah lalu hanya pasrah dan menyerah begitu saja rasanya itu bukan diri kami. Dengan semangat yang ada kami menyelesaikan bisnis plan tepat waktu dan mengumpulkannya di Dinas, setelah itu apapun hasilnya kami serahkan. Seingat saya waktu itu kami mendapatkan dana hibah sebesar 8 juta dari DIKTI dan 5 juta dari DISPORA. Mendapatkan dana hibah ini membuat kami bertanggungjawab terhadap apa yang sudah kami buat di bisnis plan, dengan beban tanggungjawab dana hibah kami sepakat untuk merealisasikan bisnis plan kami. Dari modal uang hibah yang ada kami nekat menyewa rumah kecil ditengah perkampungan area nogotirto, saat itu biaya sewa rumah 4 juta per tahun. Kenapa kami memutuskan menyewa rumah karna kami harus memiliki tempat untuk produksi yang posisinya berada ditengah diantara tempat tinggal kami semua dan kami memulai usaha KCT CASSAVA dengan system titip jual di jajan pasar kala itu ada sekitar 15 jajan pasar yang kami titipi. Baru berjalan 4 bulan usaha kami mengalami ujian, 2 orang teman kami mengundurkan diri dari KCT CASSAVA karna ingin focus skripsi dan kerja. 
+                        <br><br>
+                        Karna hanya tersisa 3 orang dalam usaha ini maka kami memutuskan untuk merubah strategi pemasaran, kenapa kami merubah strategi? Karna kami kekurangan SDM untuk setor ke jajan pasar sehingga kami harus berfikir cara efektif berjualan dengan mengadalkan 3 orang tersisa ini. Kami mengubah cara berjualan  dengan tidak lagi titip jual di jajan pasar melainkan menjual produk per box dan kami pasarkan dengan cara door to door, dari door to door ini kami banyak yang repeat order lalu kami mulai menambah pemasaran melalu TOKOBAGUS.COM dengan system keagenan. 
+                        <br><br>
+                        Kenapa keagenan? Karna masa sewa rumah kami akan habis sehingga kami harus berfikir bagaimana menghasilkan banyak uang untuk menggaji diri kami. Setahun perjalanan usaha ini membuat kami menyadari kalau kami mempunyai kesenangan dalam berwirausaha. Ditahun berikutnya kami memutuskan berhenti bekerja sebagai karyawan dan mulai mengembangkan usaha yang kami nilai potensial karna setiap harinya mengalami peningkatan penjualan. 
+                        <br><br>
+                        Tahun ke 2 usaha KCT Cassava kami memutuskan untuk meyewa toko didaerah Demak Ijo dan kami mendapatkan harga sewa yang terjangkau dan tempat yang cukup luas untuk kami produksi dan mendisplay produk. Awal kami membuka toko kami menata interior dengan apa adanya, 1 bulan berjalan tidak ada konsumen yang mapir, bulan ke dua kami mencoba merubah penataan lagi agar terlihat menarik dan cukup berhasil ada 1-2 konsumen yang mampir dan membeli produk, bulan ke 3 kami putuskan untuk merubah total penataan interior toko lebih menarik lagi dan memasang lampu yang terang di depan maupun di dalam toko serta buat papan nama lebih besar di sertai gambar produk yang lebih menarik. Kami pun membagikan flyer dan voucher di koran koran setiap 1 minggu sekali selama 4 bulan. Dibulan ke 4 pembeli mulai berdatangan setiap hari dan setiap pembeli kami minta untuk mengisi buku tamu, namun walau pembeli sudah mulai berdatangan tapi kami belum mencapai target penjualan 1 bulan. Kami mulai berfikir lagi bagaimana caranya agar target penjualan dapat terpenuhi dan tidak membuang produk. Saat itu kami terfikir melakukan beberapa cara yakini: 
+                        <br><br>
+                        1. Toko buka jam 07.00 – 18.00 WIB 
+                        <br>
+                        2. Jam 18.00 – 21.00 WIB kami melakukan direct selling di Alun alun Selatan 
+                        <br>
+                        3. Menawarkan kerjasama titip flyer ataupun titip produk di hotel 
+                        <br>
+                        4. Menawarkan pesan antar gratis ke seluruh wilayah D.I Yogyakarta 
+                        <br>
+                        5. Mengikuti pameran dan menjadi narasumber 
+                        <br><br>
+                        Singkat cerita 2 tahun berjalan mulai terjadi perpedaan visi diantara kami, dan pada tahun 2013 kami bubar.  Satu per satu partner mulai meninggalkan saya dan meninggalkan hutang yang tidak sedikit saat itu. Dengan terpaksa saya  menutup usaha KCT Cassava dalam keadaan bangkrut. 
+                        <br><br>
+                        Saya pribadi dalam keadaan bangkrut dan memiliki hutang peninggalan usaha akhirnya memcoba berfikir lagi bagaimana cara untuk melunasi hutang, saat itu usia saya masih sekitar 20 tahunan. Saya tidak punya waktu untuk sedih ataupun stress, yang saya tahu hanya bagaimana mencari cara untuk melunasi hutang. Setiap hari saya datang mengujungi teman teman saya mencari informasi jika ada lowongan kerja ataupun peluang usaha. Hingga saya menemukan 1 tempat yang dulu pernah mengajak saya bekerjasama, tempat yang cukup luas  8 x 24 meter sudah ada banguanan semi permanen yang sebelumnya di pakai untuk foodcourt. Saya bertemu pemiliknya dan mengajak kerjasama tapi pemilik tempat tersebut tidak mau bekerjasama dengan saya, beliau mau tempat tersebut saya sewa dengan harga 25 juta per tahun dan minimal 2 tahun. 
+                        <br><br>
+                        Mendengar hal tersebut saya meminta waktu berfikir dan tidak berani langsung memutuskan. Beberapa waktu berjalan saya kembali menemui pemilik tempat dan melakukan negosiasi, saya mengajukan penawaran yakini: 
+                        <br><br>
+                        Bagaimana jika saya di beri waktu 3 bulan untuk memasarkan foodcourt tersebut di iklan cilik koran Kedaulatan Rakyat. Jika dalam 3 bulan saya bisa mengumpulkan uang 25jt saya akan menyewa tempat tersebut dan pembayaran kedua 6 bulan beriikutnya. Tapi jika 3 bulan saya tidak bisa mendapatkan uang sebanyak itu makan saya tidak jadi menyewa tempat tersebut. 
+                        <br><br>
+                        Dan ternyata pemilik tempat tersebut setuju dengan penawaran saya, keesokan hari nya saya mulai menawarkan tempat tersebut di koran KR dan tidak disangka dalam waktu 1 bulan lebih saya bisa mendapatkan uang 25 juta tersebut dengan cara para penyewa foodcourt tersebut saya minta untuk membayar sewa selama 6 bulan dan tidak bisa bayar bulanan. Uang yang terkumpul akhirnya cukup untuk membayar sewa 1 tahun dan untuk renovasi tempat foodcourt serta memasang papan nama saya mengajukan pinjaman KTA di Bank sebesar 40 Juta. 
+                        <br><br>
+                        1-3 bulan awal berjalan baik baik saja dan 14 stand foodcourt terisi full, dibulan ke 4 mulai terjadi pergolakan entah dari mana awalnya, para penyewa stand mulai banyak complain dari sepi nya pengunjung, system harga sewa yang berbeda beda dll. Perlahan satu per satu mengakhiri kerjasama kontrak sewa stand foodcourt. Karna sudah tidak tahu harus bagaimana lagi dan ternyata mengurus banyak kepala itu memusingkan akhirnya saya putuskan untuk disewakan lagi ke orang lain dengan persetujuan pemilik tempat. Saya mulai mengiklankan lagi di koran KR, tak lama berselang ada 1 orang yang tertarik menyewa tempat tersebut dengan harga sewa 60 juta/ tahun. Dari 60 juta tersebut, 25 juta saya gunakan untuk membayar sewa tahun ke 2 dan sisa nya untuk melunasi hutang usaha sebelumnya. Sedang saya masih memiliki hutang KTA sebesar 40 juta. 
+                        <br><br>
+                        Dari situ tahun 2014, saya mulai lagi mendatangi teman teman dan mengirim pesan jika ada lowongan pekerjaan. Dan tak lama berselang ada teman menginformasikan bahwa temannya yang bekerja di kontraktor membutuhkan admin perempuan untuk proyek Hotel di Yogyakarta, saya langsung melamar kesana dan langsung di terima. Saya bekerja sebagai admin proyek selama kurang lebih 2 tahun sampai tahun 2016 hingga hutang usaha lunas. Namun setelah 2 tahun dan proyek hotel tersebut selesai maka kontrak kerja saya pun selesai. Saya sempat mau diajak pindah ke kantor pusat akan tetapi saya tidak mau karna saya tidak suka tinggal di Ibukota. 
+                        <br><br>
+                        Dari situ tahun 2016 akhir saya memulai lagi usaha Brownies Cassava yang saya titip jual di jajan pasar. Usaha ini berjalan selama 2 tahun dengan berbagai lika liku nya. 
+                        <br><br>
+                        Ditahun 2018 saya dan dua teman memulai usaha lagi sebagai supplier sayur dan buah untuk hotel, café dan resto. Satu teman saya sebagai pemodal, saya dan satu teman lagi yang menjalankan dengan system bagi hasil yakni 30: 35 : 35, 30% untuk pemodal. Di awal semua berjalan baik dan lancar, mulai dari supplai 1 hotel hingga 5 hotel dan 3 café atau resto. Namun di dalam perjalanan tersebut yang tidak lancar adalah internal kami, teman saya yang menjalankan usaha ini kerjanya tidak optimal dan hamper setiap hari datang terlambat dan saya yang melakukan semua pekerjaan sendiri mulai dari belanja di pasar jam 03.00 wib hingga kirim barang ke Horeka dan itu bisa selasai jam 14.00 wib paling cepat jam 12.00 Wib. Di awal awal bulan saya masih memaklumi, lambat laun masuk tahun ke 2 mulai semakin parah bahkan mulai tidak berangkat kerja dan kenapa terlambat atau tidak berangkat itu hanya karna teman saya tidak bisa mengelola waktu tidur dan bergadang. Mulai semakin parah di tahun ke 2 saya mulai jengah, hingga masalah ini saya mulai bicarakan di rapat bulanan yang biasa kami lakukan. Teman saya ini mengakui salahnya dan berjanji akan memperbaikinya, 1 bulan setelah itu semua aman, yang terlambat 1 atau 2 kali saya masih bisa memaklumi. Selanjutnya kembali ke setelan awal lagi, dalam 1 bulan bisa di bilang masuk kerja hanya 2 minggu. Gaji kami saat itu dari pembagian hasil tersebut ditambah uang makan harian untuk kami berdua yang menjalankan usaha, sedang teman kami yang pemodal hanya mendapat bagi hasil. Dengan jam kerja yang seperti itu dimana teman saya masuk hanya 2 minggu dalam satu bulan mulai membuat saya tidak nyaman lalu saya membahasnya bersama teman saya yang pemodal ini sebaiknya bagaimana jika seperti ini terus saya tidak sanggup. Namun teman saya yang pemodal saat itu mencoba untuk menenangkan saya dengan memberi alternative kalau di tambahkan pengeluaran 1 juta setiap bulan untuk tambahan gaji saya. Dan saya menyetujuinya, teman kerja saya juga menyetujui. Tibalah di akhir bulan saat pembagian hasil saya menerima 35% bagian saya di tambah uang 1 juta yang di sepakati sebelumnya, dan luarbiasanya karna bulan itu pas pemodal yang mentrasfer jatah bagi hasil yang biasanya adalah saya yang memegang uang perusahaan karna satu dan lain hal bulan itu waktunya sangat pas diman teman saya pemodal yang mentransfernya. Dan yang membuat saya kaget adalah tiba tiba uang 1 juta yang di sepakati bersama itu di potong 500.000 oleh teman saya pemodal ini dengan alasan butuh uang. Dan okey saya menerima itu, namun ternyata bulan berikutnya masih sama saja di potong juga. Berjalan 3 bulan seperti itu saya sudah tidak sanggup mentolerir lagi, ini mulai tidak sehat menurut saya. Sama saja saya kerja sendiri tapi hasilnya di nikmati 3 orang, saya mulai merasa tidak adil di tambah lagi di bulan bulan berikutnya itu juga teman kerja saya dalam 1 bulan hanya berangkat 3-4 kali. Berselang dari situ ada 3 hotel yang menghubungi saya dan meminta untuk di supplai sayur, dari situ saya mulai berfikir kalau lebih baik ini saya jalankan sendiri dengan uang pribadi saya dengan system pembayaran cash. Tiga hotel dan 1 resto ini mau dengan system yang saya terapkan, dan berjalan lancar. Orderan dari klien lama pun masih saya jalankan walau mulai berkurang karna isu pandemic mulai masuk ke Indonesia. Namun orderan dari klien yang menggunakan uang pribadi saya tetap berjalan baik dan lancar. Karena mengetahui kalau saya memiliki orderan sendiri temen saya yang pemodal tidak terima dengan tindakan saya dan meminta modalnya kembali. Karena orderan saya pribadi semakin banyak dan ada 2 resto besar melakukan pembayaran cash tempo awalnya saya menggunakan sebagian uang modal teman saya tersebut dan hutang di pasar. Maka karna saya harus bertanggung jawab terhadap uang modal teman saya yang saya kelola itu dan ada beberapa hutang di pedagang pasar juga  saya akhirnya mengajukan pinjaman ke bank sebesar 150 juta untuk mengembalikan modal dan membayar hutang itu tersisa 30 juta. Dan sisa 30 juta itu saya gunakan untuk modal kerja, Saya ingat betul saat itu pinjaman saya cair di akhir bulan februari dan tiba tiba awal bulan Maret 2020 Indonesia menyatakan lockdown. Di bulan maret memang belum begitu terasa efek lockdown saya masih mengirim sayur, hingga akhir nya diakhir maret pembayaran mulai sulit. Resto besar yang saat itu memiliki tunggakan 150 juta tidak mampu membayar tepat waktu dan memohon keringanan untuk di cicil setiap bulannya. Saya mulai bingung, karna saya baru saja mengajukan pinjaman tapi malah klien mangkir dalam pembayaran. Dari mana saya harus mengangsur pinjaman say ajika begini keadaannya. Dengan terpaksa uang yang tersisa saya simpan untuk jaga-jaga bayar angsuran apabila saya belum bisa mendapatkan penghasilan lagi. Jika di hitung sisa uang pinjaman hanya bisa untuk membayar angsuran selama 6 bulan  jadi sebelum 6 bulan saya harus sudah bisa mendapatkan penghasilan. 
+                        <br><br>
+                        Saat 2020 menjadi titik terendah saya karena kejadian tersebut ditambah lagi saya mungkin menyakiti hati teman saya yang sudah baik membantu saya secara permodalan tapi malah saya tinggalkan. Saat itu saya berfikir begitu, apa karna itu jadi saya mengalami hal ini, saya harus jadi punya hutang lagi setelah bertahun tahun saya survive untuk melunasi hutang setelah lunas beberapa waktu saya jatuh di lubang yang sama yakni hutang. Saya sudah tidak bisa mundur lagi, yang bisa saya lakukan hanya terus maju. Namun entah mengapa saya merasa menjadi pribadi yang lemah dan tak berdaya karna mengalami kegagalan berulang kali. Rasanya saya sudah berusaha, bekerja optimal, tidak mengeluh tapi kenapa saya di sini sini aja, saya merasa stuck. Dan ini jelas gejala depresi atau frustasi. Saya mulai mencari tahun tentang depresi itu sendiri, mulai mendengarkan video-video kajian, berserah diri ketika saya mulai berfikir dan tidak menemukan solusi menurut saya saat itu saya hanya bisa berdoa dan berdzikir. Entah dari mana datangnya kekuatan dan petunjuk ini beberapa waktu saya menyendiri dan berkontemplasi hingga disuatu malam saya membuka album foto di handphone saya menemukan sebuah capture status Whatsapp ibu saya di bulan januari 2020, yang menuliskan pesan selamat ulang tahun untuk saya dan beliau bangga dengan apa yang sudah saya lewati dan jalani. Dari situ saya sadar Tuhan memberikan petunjuk Nya dan saya mulai bangkit kembali karna selama ini saya berjuang untuk membuat bangga ibu saya tapi kenapa ketika saya sudah mendapatkan pengakuan itu dari ibu saya malah kehilangan semangat sesaat. Ini tidak bisa dibiarkan, saya harus semangat lagi karna saya ingat sekali selama hidup saya belum pernah menyerah seperti saat ini. Dan ini memalukan bagi saya namun harus tetap saya jalani, karna kejadian itu saya jadi banyak belajar tentang hidup. Saya sudah tak seambisius dulu, saya tidak lagi mentarget sesuatu, jalani saja. Saya hanya menjalani apa yang ada di depan saya.
+                        <br><br>
+                        Bermodal pengakuan bangga ibu saya mulai menjalani hari dengan penuh keyakinan, saya pergi menemui teman saya yang berjualan oleh oleh di pasar godean. Langsung terfikir saat itu untuk memasarkan produk oleh oleh tersebut secara online di e-commerce. Pulang dari sana saya langsung mencari dan mengulik sebanyak-banyaknya informasi mengenai jualan online di e-commerce. Tanpa berlama lama keesokan hari saya izin ke teman saya untuk menjual produknya di e-commerce, teman saya langsung menyetujuinya dan kami mulai berpartner. Teman saya menyediakan stock saya yang menjualnya secara Online dengan system beli putus yang awal di awal awal saya membayarnya tempo atau mingguan. Besok harinya saya langsung mencari pinjaman kamera teman dan mulai melakukan foto produk.
+                        <br><br>
+                        Mei 2020, saya mulai mengupload produk di shopee, lazada, bukalapak, dan tokopedia dibagian nama usaha ini yang saya tidak suka dari dulu. Pemilihan nama usaha itu terlalu rumit di pikiran saya, setidaknya nama itu harus ada filosofinya, ada artinya yang baik dan sebaginya itu membuat saya kesulitan membuat nama usaha dari awal usaha di bagian nama saya selalu Tanya ke ide nama ke temen dan kali ini saya sudah tidak ada waktu untuk tanya. Akhirnya saya dapat wangsit alias malas mikir itu tadi, dan toko online saya bernama MER STORE yang artinya tokonya meryl udah gitu aja singkat padat dan jelas.  Sambil menunggu datangnya orderan setiap hari saya menyediakan waktu 1 jam untuk membuka akun seller dan mempelajarinya satu per satu bagian dan mempelajari system kerja pemasaran di e-commerce, datang orderan pertama dibulan ke-2 saat itu orderan masih 1-2 dan kadang ada kadang tidak ada orderan. Saya mulai mengevaluasi akun saya, menurut saya saat itu foto produk dan kemasan produk kurang menarik. Saya memutuskan untuk reset kemasan sudah jadi yang ada di pasaran karna saat itu uang modal yang saya punya hanya tersisa 3 juta jadi saya harus berfikir efektif agar uang tersebut cukup untuk menjalankan usaha ini. Akhirnya saya menemukan kemasan yang cocok untuk produk jenang dan krasikan dari situ saya menggunakan kemasan terserbut dan melabeli dengan sticker lalu melakukan foto produk kembali dengan menggunakan handphone. Bermodal 3 juta saya mengajukan penawaran ke teman saya pemilik los oleh oleh tersebut kalau saya akan membayar produk yang terjual saja dan saya tidak stock.
+                        <br><br>
+                        Dan benar bulan berikutnya tepatnya bulan ke 4 saat itu penjualan Jenang dan Krasikan mengalami peningkatan, per hari 5-10 paket. Tahun 2020 orderan perhari pernah tembus di 500 orderan saat bulan Ramadhan. Awal packing paket dan mengemas produk saya lakukan numpang di pinggiran los pasar, di bulan Ramadhan inilah saya mendapatkan ujian lagi. Saat bulan Ramadhan pengerjaan packing paket harus saya kerjakan sampai pagi di dalam pasar dan saya mempekerjakan 2 orang freelancer untuk membantu saya, ternyata karna saya lembur dari pagi sampai pagi saya mendapat complain dari pemilik los pasar dan penjaga malam pasar karna mengganggu jalan dan saat malam berisik suara lakban sehingga penjaga malam pasar merasa terganggu.
+                        <br><br>
+                        Setelah mendapatkan complain saya bernegosiasi meminta waktu sampai lebaran, setelah lebaran saya akan pindah dan mereka menyetujuinya. Lebaran disaat semua orang merayakan hari kemenangan saya harus beres beres barang barang saya yang ada di pasar dan pindah kerumah. Kenapa tidak dari awal saya packing dirumah? Karena saya tidak mau menyatukan pekerjaan dengan rumah. Semua terjadi begitu saja jadi satu-satunya tempat yang terfikir oleh saya saat itu adalah rumah mau tidak mau. 
+                        <br><br>
+                        Tahun 2021 akhir teman lama saya yang bekerja di luar kota datang dan mengajak saya kerjasama usaha, teman saya ini ingin membuka usaha foodcourt di area dekat rumah dan saya diminta untuk membantu mengelolanya sekaligus memindahkan usaha saya yang awalnya dirumah menjadi di tempat foodcourt tersebut. Saat itu pembangunan foodcourt membutuhkan waktu 4 bulan, setelah foodcourt siap pakai saya langsung pindah. Karna mengelola dua tempat berbeda yang masih merintis itu berat untuk saya itulah kenapa teman saya meminta saya untuk memindahkan usaha saya kesana dikarenakan diawal ketikan ditawari saya menolak dengan alasan tidak sanggup jika harus berada di dua tempat berbeda.
+                        <br><br>
+                        Tawaran untuk pindah menjadi angin segar buat saya karna selama ini saya masih beban jika tempat usaha dan rumah jadi satu itu sangat tidak nyaman buat saya dan karyawan. Selang 1 bulan pindah kerumah saya memutuskan untuk mencari karyawan karena selama itu orderan masih stabil dan cenderung meningkat sedang kapastitas saya hanya bisa mengerjakan 150 paket per hari, orderan saat itu bisa mencapai 200 paket. Jadi saya mencari 2 karyawan untuk packing paket dan mengemas produk, tugas saya melakukan pemasaran secara online.
+                        <br><br>
+                        Di tahun ini saya memiliki pengalaman yang membuat saya bingung, dan sebagai wirausaha saya harus bersikap selayaknya. Partner saya yang menyediakan stock barang juga mengikuti jejak saya berjualan online padahal di awal obrolan kami adalah saya yang memasarkan online beliau yang Offline. Singkat cerita selang beberapa waktu sejak saya mendaftarkan jualan di e-commerce partner saya ini ternyata juga mendaftar tanpa sepengetahuan saya walau akhirnya beliau bilang kalau mau ikut jualan online. Saat itu saya keberatan sebenarnya namun saya fikir karna beliau sudah membantu saya dengan pembayaran tempo dan pengambilan barang sesuai orderan yang masuk tanpa perlu saya stock akhirnya saya mengiyakan dengan alasan tersebut, saling membantu. Namun memang usaha itu bukan tentang saling membantu, usaha itu berdagang ada hitungannya bukan hanya menggunakan rasa tidak enakan atau menolong. Seiring berjalannya waktu orderan saya yang semakin hari meningkat, partner saya pun menginginkan hal yang sama lalu beliau minta saya untuk mengajarkan bagaimana caranya karna memang beliau juga Gaptek, berbulan bulan saya mengajari beliau hingga beliau bisa menjalankan sendiri dan orderan mulai meningkat. Hingga puncaknya adalah di Bulan Ramadhan tahun 2021, yang awalnya hanya orderan saya yang ramai, Ramadhan tahun ini orderan beliau juga ramai walau memang masih di bawah saya penjualannya. Ramainya orderan ini akhirnya memperlihatkan siapa kami sebenarnya, selama ini kami bertemen bertahun tahun tidak pernah ada masalah namun kejadian ini menjadikan pelajaran berharga buat saya pribadi.
+                        <br><br>
+                        Stock dari produsen saat itu terbatas, dengan orderan yang banyak membuat produsen juga kaget karna saat itu masih pandemic dan orderan offline menurun, namun kami tiba tiba order dalam jumlah banyak dan benar produsen membutuhkan waktu lebih untuk memenuhi orderan kami, intinya stock terbatas untuk kami. Disebabkan oleh hal tersebut partner saya entah apa yang ada di dalam benaknya, dari 100% orderan saya hanya di penuhi 40% hingga H-10 lebaran karna yang 60% orderan saya di keep beliau untuk memenuhi orderan beliau dan beliau bilangnya ke saya kalau produsen hanya mengirim barang sedikit dan hanya cukup untuk beliau. Sedang saya tanpa sengaja bertemu dengan produsen produk tersebut dan ternyata produsen sudah mengirim sesuai dengan orderan. Seketika saya tak bisa berkata kata dan mulai terdiam, saya harus bagaimana dengan ini orderan saya di sabotase oleh partner saya. Saat itu yang terfikir oleh saya adalah bagaimana saya memenuhi orderan yang sudah masuk, saya meminta produsen untuk membantu saya menyiapkan stock untuk orderan saya dan produsen juga setuju untuk membantu saya.
+                        <br><br>
+                        Kejadian itu membuat saya berada di persimpangan, tindakan apa yang sebaiknya saya lakukan. Saat itu saya berfikir sebagai teman beliau sudah membantu saya disaat saya bingung mau usaha apa, tapi disisi lain ini tentang usaha, kita berpartner dan saling menguntungkan. Saya masih berfikir terus tindakan apa yang harus saya lakukan, dimana saya harus memposisikan diri sebagai teman atau sebagai partner dalam mengambil keputusan. Saya tidak mau berlama lama mengulur masalah ini jadi saya segera menghubungi partner saya walau saya masih belum bisa mengambil keputusan akhirnya saya mencoba untuk mengkomunikasikannya terlebih dahulu dengan partner saya namun 3 kali saya aja bicara serius beliau menolak terus dengan berbagai alasan. Kejadian itu membuat saya yakin mengambil keputusan, ketiga kali beliau saya aja bertemu namun menolak saya langsung memutuskan untuk berhenti bekerjasama dengan beliau tanpa piker panjang lagi. Jika seperti it uterus masalah hanya akan berlarut-larut dan kemungkinan terulang kembali pasti ada. Dari situ saya mulai mencari cari produsen sendiri bermodal dari google, saya mulai menemui produsen dan mengajak bekerjasama. Hampir 90% saya menemukan produsen yang sama dengan partner saya karna memang selama ini juga saya sudah menggunakan produsen tersebut, secara rasa dan kualitas pun saya cocok. Mengetahui saya menggunakan produsen yang sama yang saya cari di google mantan partner saya tersebut tidak terima dan mulai satu per satu produsen di datangi dan di tanyai kenapa mau bekerjasama dengan saya. Saat itu ada beberapa produsen yang goyah karna merasa tidak enak dengan mantan partner saya yang kecewa dengan saya. Namun saya berhasil melobi para produsen hingga mereka akhirnya mau bekerjasama dengan saya. Saat itu saya katakan pada produsen untuk tidak perlu khawatir dengan anggapan mantan partner saya kalau saya menikung beliau dan alasan lain lain yang membuat produsen merasa tidak enak. Yang terfikir oleh saya saat itu saya tidak pernah menikung. Satu, saya sudah mencoba mengkomunikasikannya dengan beliau. Dua, saya mendapatkan infomasi data produsen dari google bukan dari diam diam meminta nomor produsen walau saya bisa saja ketika dulu produsen mengirim barang saya meminta nomor produsen tapi itu tidak pernah saya lakukan walau saya bisa. Saya tetap order barang dari teman saya dan memberi keuntungan kepada partner saya saat itu. Buat saya, orderan saya yang banyak itu karena ada rezeki banyak orang di dalam nya. Walau saya menjual lebih mahal dari yang partner saya jual tapi Alhamdulillah nya banyak pembeli yang lebih order ke saya dari pada partner saya. Ini bukan tentang saya yang pandai berstrategi atau berjualan ini tentang rejeki orang orang yang mendoakan dan mensupport di belakan usaha online shop ini, ada parent usaha, ada produsen, ada afiliator, ada diver online dan masih banyak lagi.
+                        <br><br>
+                        Walau saya sudah mengambil keputusan seperti itu namum dalam hati saya kadang masih merasa tidak enak karna akhirnya hubungan saya dan mantan partner saya sebagai teman menjadi rusak. Saya suka kepikiran apa tindakan saya salah menjadi rusaknya pertemanan, atau ini sudah tepat untuk saat ini tindakan saya. Sampai akhir nya saya berdoa pada tuhan, “Tuhan, jawablah kebimbangan hati ku dengan orderan yang semakin meningkat jika memang keputusan yang aku ambil saat ini sudah tepat untuk saat itu dan tenangkanlah hati ku, atau jika tindakan kurang tepat tunjuklah.” Perasaan ini ada mungkin karna saya people plessure, paling ga enakan kalau bikin orang kecewa karna saya dan saya mengetahui itu karna sampai hari ini no whatsapp saya masih di blok oleh beliau.
+                        <br><br>
+                        Tahun 2022 bulan maret foodcourt tersebut yang kami beri nama Pasar Seni dan Kuliner Nglaras Roso grand opening, kami memilih bulan maret karna bersamaan dengan bulan Ramadhan jadi sebagai awalan kami membuka dengan pasar sore Ramadhan. Antusias warga dan pengunjung begitu luar biasa mungkin karna saat itu sudah mulai dibukanya kembali aktivitas normal setelah pandemic selama 2 tahun. Di tahun ini juga saya mulai mendaftar ke tiktokshop sebagai seller, karna memang saya terlambat tahu kalo tiktok ternyata ada e-commerce saya hanya tahunya itu sebagai social media. 2 bulan setelah saya mendaftar di tiktok shop, orderan semakin meningkat lagi hingga entah kapan mulainya saya lupa tiba tiba saja produk Jenang dan Krasikan MER STORE ternyata FYP di tiktok lewat video yang di unggah salah satu affiliator yang juga selama ini mengikuti perkembangan MER STORE di lazada dan Shopee. Begitu saya upload produk di tiktok shop affilator ini langsung membeli produk saya dan membuat konten video. Selain FYP affiliator tersebut juga memasukan etalase produk saya dalam live nya, saya lupa lupa ingat saat itu FYP tembus berapa paket tapi seingat saya hamper 1000 paket, affiliator lain pun mulai melirik produk saya dan ikut mengafiliasi. Sejak FYP itu orderan tidak berhenti dan rata rata orderan perhari bisa mencapai 300-500 paket.
+                        <br><br>
+                        Awal FYP tersebut kami masih mampu menghandle pesanan walau tak jarang keteteran namun masih bisa di selesaikan sesuai waktu yang ditentukan, hingga tahun 2023 saat tiktok di tutup 4 bulan membuat kami berfikir kembali. Ketika e-commerce OFF penjualan kami merosot dratis karna memang kami 99% menjual produk hanya di e-Commerce, ditutupnya tiktokshop sementara membuat kami sadar bahwa kami juga harus menjual produk secara offline. Tapi bagaimana caranya? Kalau harus titip jual dimana kami harus menitipkannya? Bagaimana modalnya, karna titip jual pasti modal dulu diawal dan dibayar tempo. Banyak pertanyaan di otak kami hingga suatu hari dari Group atau instagram Dinas Koperasi dan UMKM Sleman memberikan informasi akan diadakannya gathering dan kurasi produk untuk titip jual di Bakpia Kukus Tugu Jogja tanpa piker panjang kami langsung mendaftar acara tersebut. 
+                        <br><br>
+                        Waktunya pas disaat kami membutuhkan info itu mendatangi kami, dalam kurasi tersebut dari ratusan yang mengikuti hanya sekitar belasan yang berhasil lolos kurasi Bakpia Kukus Tugu Jogja dan salah satunya adalah Jenang dan Krasikan MER STORE, satu bulan berselang kami mulai titip jual di Bakpia Kukus Tugu Jogja hingga saat ini. Bisa dikatakan penjualan kami disana bagus, per minggu setidaknya 100 box kami kirim ke Store Bakpia Kukus Tugu Gondomanan dan Raya solo. Untuk awalan hanya 2 store itu yang dititipi sebagi uji coba penjualan, apabila dalam 3 bulan mencapai target penjualan yang di tentukan oleh manejeman bakpia kukus maka produk kami bisa lanjut terus untuk titip jual disana. Kini kami sudah mengirim di 5 store bakpia kukus tugu jogja yakni: 
+                        <br><br>
+                        1.	Store Gondomanan
+                        <br>
+                        2.	Store Raya Solo
+                        <br>
+                        3.	Store Wonosari
+                        <br>
+                        4.	Store Borobudur 
+                        <br>
+                        5.	Store Kaliurang 
+                        <br><br>
+                        Tiktokshop mulai buka lagi di awal tahun 2023, saya lupa persisnya. Saya dan beberapa affiliator yang saat itu mencapai ribuan mulai kembali memasarkan dan membuat konten. Dan boom salah satu affiliator kami secara bergantian waktu FYP dan orderan terus meningkat setiap harinya. Paling puncaknya adalah saat bulan Ramadhan tahun 2024 ada 4 affiliator secara bersamaan FYP dan orderan saat itu tembus di 3000-an paket. Dan waktunya tidak pas karna saat itu 10 hari sebelum lebaran dan itu kami tidak mungkin bisa menyelesaikan pesanan sebanyak 3000-an paket, malam itu juga kami melakukan rapat antara gudang produksi dan gudang packaging. Kami menghitung sisa stock bahan baku yang kami punya dan SDM yang ada, setelah kami berhitung kami hanya bisa menyelesaikan sekitar 2500 paket orderan tersebut. Dan saat itu juga kami langsung mengosongkan stock di seluruh E-commerce untuk Produk Jenang dan Krasikan. 
+                        <br><br>
+                        Jika tidak di kosongkan orderan akan terus masuk dan kami akan semakin keteteran dengan itu ditambah lagi jika kami tidak bisa memenuhi pesanan performa toko kami akan buruk dan bisa terkena pelanggaran hingga ke Baned, dari itu kami sepakat memutuskan untuk mengosongkan stock dengan berat hati tapi harus kami lakukan. Inilah jalan terbaik yang bisa kami temukan saat itu. Walau dari tim Packaging cukup kecewa karna tim produksi tidak bisa memenuhi pesanan. 
+                        <br><br>
+                        Akhir tahun 2024 kami mulai berfikir untuk mencari produk baru yang bisa kami produksi langsung dan memproduksi sebanyak mungkin. Disaat itu saya teringat dengan KCT Cassava, dimana ketika saya menutup usaha tersebut saya berjanji pada diri sendiri bahwa suatu saat Brownies Cassava akan saya mulai lagi dengan lebih baik. Kami mulai melakukan reset dan development mulai dari produk, pemasaran, competitor, harga dll. 
+                        <br><br>
+                        Di awal 2025 brownies menjadi makanan yang tren lagi dengan brownies fuggy atau brownies yang tekstur atasnya lebih chrunchy dan lumer di dalam. Dari situ kami yakin untuk memulai Brownies Cassava kembali, kami melakukan mencari-cari cara mulai dari:
+                        <br><br>
+                        1.	Cara agar brownies bisa tahan sampai 1 bulan minimal
+                        <br>
+                        2.	Mengolah resep agar menjadi brownies fuggy 
+                        <br>
+                        3.	Mengolah lagi bagaimana agar singkong dapat tahan lama 
+                        <br><br>
+                        Terus dan terus kami melakukan reset hingga menemukan formula yang tepat. Setelah kami melakukan reset produk kami mulai memikirkan tentang manajemennya, perizinan usahanya, pemasarannya karna seperti diketahui kalau selama ini kami menjalankan usaha online shop kami belum mengaplikasikan manajemen perusahaan karna memang focus kami masih di penyelesaian pembayaran hutang piutang. Hingga saat ini masih ada beberapa resto dan hotel yang belum melunasi tagihannya terhadap kami. 
+                        <br><br>
+                        Saat kami sedang mencari informasi mengenai perizinan dan fasilitasi PIRT, halal dsb kami bertemu dengan sebuah feed tentang Inkubasi Bisnis 2025. Dari namanya Inkubasi bisnis saya berasumsi ini adalah sebuah program yang dirancang untuk UMKM agar dapat menjalankan serta memperbaiki usahanya secara professional. Bernula dari asumsi tersebut saya mendaftarkan diri pada program Inkubasi Bisnis karna memang saya membutuhkan hal tersebut untuk mencapai tujuan kami mulai membangun kembali Brownies Cassava. Selang beberapa bulan saya sendiri juga sudah lupa dengan program Inkubasi Bisnis, tiba tiba ada chat masuk yang menginformasikan bahwa Mer Store ikut dalam bisnis check up. Apa ini maksudnya bisnis check up? Dengan rasa penasaran itu saya mengikuti bisnis check up di Dinas Koperasi dan UMKM DIY, dan ternyata itu merupakan sesi wawancara mengenai komitmen kami dalam mengikuti acara Inkubasi Bisnis ini karna inkubasi bisnis ini akan berlangsung kurang lebih selama 6 bulan. Sangat mengejutkan buat saya karna ini bukan program 1-3 hari melainkan 6 bulan dengan system seleksi, bisnis check up sendiri menseleksi dari 160 UMKM menjadi 75 UMKM. Saat diwawancara saya ingat saya mengatakan “ kalau boleh jujur jika program ini berlangsung terus menerus selama 1 minggu full atau 1 bulan full atau 6 bulan full saya tidak sanggup. Tapi apabila coaching clinic selama 3 hari saya masih sanggup”. Wawancara saat itu hanya berlangsung singkat dengan pertanyaan informatif mengenai usaha, dan yang saya ingat betul pertanyaan diluar usaha ada komitmen dalam mengikuti program. Saya tidak pernah menyatakan saya sanggup dan mau mengikuti program ini, saya juga tidak mengatakan saya tidak sanggup. Hanya jika itu berlangsung selama 1 minggu full atau lebih saya tidak bisa komitmen. Setelah wawancara saat itu dengan Mas Anto dari Diskop DIY saya sempat kembali ke kursi dan berbincang dengan temen orang sebelah saya yang menanyakan wawancaranya ditanya apa, saat itu saya hanya mengatakan “Ya hanya tentang usaha kita aja, dan saya jawab jujur apa adanya tidak ada yang saya tambahkan atau saya kurangi tapi ya kayaknya saya juga ga terus ini, karna saya hanya menjawab apa adanya aja.” Dan saat saya berkata demikian orang sebelah saya hanya menganggukan kepala dan berkata “ ya ya ya”. 
+                        <br><br>
+                        Ternyata selang beberapa waktu dari situ saya kembali mendapat chat bahwa Mer Store terpilih dalam 75 peserta Inkubasi Bisnis 2025, wah ga pernah nyangka dang a menjadi tujuan saya hanya menjalankan yang sudah saya klik waktu itu yaitu Klik pendaftran Inkubasi Bisnis 2025, pantang buat saya untuk mundur kalau saya sudah maju. Prinsip saya dari dulu, Jangan bilang Tidak sebelum mencoba. Jika sudah mencoba lakukan hingga tidak ada pilihan lain. 
+                        <br><br>
+                        Setelah wawancara ada sesi Orientasi Inkubasi Bisnis, disini di jelaskan secara teknis bagaimana Inkubasi Bisnis ini berjalan. Dan disini saya paham bahwa saya tidak salah mengikuti program ini karna ini yang saya butuhkan untuk memulai Brownies Cassava. Inkubasi Bisnis ini seperti lomba karna sistemnya seleksi dan rasanya saya sudah lama tidak mengikuti lomba seperti ini, sudah lebih dari 15 tahun sejak awal saya memulai menjadi wirausaha. Awal terpilih dalam 75 peserta membuat saya insecure karna setelah 15 tahun saya keluar lagi kedunia wirausaha, yang selama ini saya tinggalkan karna saya harus menjadi pedagang. Walau hampir setiap hari selama 10 tahun saya menjadi pedagang saya selalu berucap pada diri saya bahwa oneday kita akan kesana lagi menjadi Wirausaha yang sesungguhnya dengan segala kesiapan mental, manajeman dan SDM bukan lagi wirausaha yang asal nyemplung tapi tidak punya mental bersaing yang kuat. Sekarang sudah 35 Peserta dan akan menuju 20 Perserta. 
+                        <br><br>
+                        Saat pengerjaan tugas di kolektif 1 saya benar-benar merasa terbantu, karna jika bukan karna Inkubasi Bisnis hal hal manajerial seperti itu tidak saya kerjakan dan hanya saya tunda tunda seperti yang terjadi selama 4 tahun kebelakang ini. Karna tugas kolektif 1 ini saya jadi harus mengerjakan manajerial usaha dan saya suka karna memang saya tipe orang yang suka tantangan. Saya merasa tertantang ketika mengerjakan tugas, walau di beberapa hal itu terlihat mudah namun jika itu tidak pernah dikerjakan dalam waktu yang lama itu menjadi hal yang sulit untuk di selesaikan. Tugas kolektif 1 saya merasa tidak optimal dalam mengerjakannya, saya hanya memperingkas dalam pengerjaannya agar cepat selesai walau kenyataannya tidak cepat juga selesainya karna ada rasa malas yang harus di lawan, musuh terbesar dalam hidup adalah Diri Sendiri dan itu saya rasakan betul karna saya terbiasa selama ini tidak melakukannya jadi untuk mengerjakan tugas tugas itu butuh kemauan yang besar untuk melawan rasa malas dalam diri. Jika diingat kembali kedalam diri, rasa malas itu selalu kalah dengan rasa patang menyerah. Kadang kita sudah sekuat tenaga pun masih belum bisa mencapai tujuan apalagi jika kita bermalas malasan. Dan benar last minute saya menyelesaikan kekurangan dari tugas kolektif 1, setelah submit tugas saya hanya berserah karna saya tahu saya tidak optimal dalam mengerjakannya maka saya tidak berharap akan bisa ketahap selanjutnya. Namun ternyata siapa sangka kalo Mer Store lolos ke tahap kolektif 2 yakni 35 Perserta. 
+                        <br><br>
+                        Sampai hari ini saat membuat storytelling ini pun saya masih merasa insecure melihat teman-teman yang begitu serius dan keren-keren usahanya. Ditambah sebagian besar masih muda usianya, ini membuat saya semakin insecure tapi bukan berarti terus mundur. 
+                        <br><br>
+                        Kalau boleh saya bercertita, saya termasuk orang yang menjunjung tinggi manajerial. Semua harus dicatat secara detail. Dan benar sejak saya mengalami titik terndah pada tahun 2020 saya menghilangkan semua itu, karna saya merasa selama ini saya sudah mencatat keuangan, melakukan manajerial dan memisahkan keuangan tapi kenapa saya masih gagal atau bangkrut. Karna kecewanya saya terhadap diri saya sendiri, saat memulai bisnis online ini saya mengatakan pada diri saya sendiri kalau saya tidak mau mencatat keuangan dan melakukan manajerial, saya hanya mau semua berjalan saya tanpa harus membuat perencanaan. Dan keuangan juga semua berjalan saya tanpa ada pembukuan atau pemisahaan keuangan karna memang saya juga memulai usaha onlineshop dengan uang 3jt tersisa dan tidak ada yang lain. 
+                        <br><br>
+                        Lalu bagaimana saya menjalaninya? saya hanya mengingat uang 3jt saya. Setiap ada pemsukan semua saya bayarkan untuk dagangan, sisa saya anggap modal. Saya hanya mengambil upah saya perhari 50rb di awal. Seperti itu berlanjut hingga 4tahun, dan saya selalu berfikir saya tidak punya uang dan mengambil jatah upah saya perhari dari awal 50.000, 75.000, 100.000, hingga kini 156.000. 
+                        <br><br>
+                        Tugas pencatatan keuangan membuat saya sadar ternyata selama ini saya bukan tidak mecatat keuangan melainkan saya hanya tidak membuat laporan keuangan saya karna pencatatan keuangan saya semua sudah ada di data seller center e-commerce saya dan saya hanya tinggal melengkapi. Awalnya saya stress mau mulai dari mana ini sudah terlanjur terlalu lama saya tidak mecatat keuangan dan merapikan data, namun semua di mudahkan dengan penyimpanan data yang ada di e-commerce di tambah lagi transaksi saya selama ini melalui online whatsapp maupun transfer. Dan data masih tersimpan rapi di aplikasi, penting bagi saya sekarang dengan mengikuti inkubasi bisnis ini adalah merapikan dan melengkapi manajerial yang ada dan bersiap menuju mimpi yang selama ini terkubur karna saya sedang memantaskan diri secara mental.
+                        <br><br>
+                        Kadang dalam usaha itu kita sudah tahu mau berbuat apa tapi kita tidak tahu harus mulai darimana, dan saya beruntung bisa mengikuti program inkubasi bisnis 2025 ini karna saya jadi tahu harus mulai dari mana. Dan mental adalah kunci utama seorang wirausaha. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-title">Klien Puas</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-title">Profesional</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">1K+</div>
+                        <div class="stat-title">Proyek Selesai</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-title">Penghargaan</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- Footer -->
+        <div class="wave-top warna2">
+            <footer class="footer wave-bottom warna2">
+                <div class="container warna2">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <h5 class="mb-4">Mer Store</h5>
+                            <p>Toko online terpercaya dengan berbagai produk oleh-oleh khas jogja.</p>
+                            <div class="mt-4">
+                                <a href="#" class="text-dark me-3"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="text-dark me-3"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-dark me-3"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-dark"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <h6 class="mb-4">Tautan Cepat</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="../index.html" class="text-muted">Beranda</a></li>
+                                <li class="mb-2"><a href="katalog.html" class="text-muted">katalog</a></li>
+                                <li class="mb-2"><a href="tentangkami.html" class="text-muted">Tentang Kami</a></li>
+                                <li class="mb-2"><a href="kontak.html" class="text-muted">Kontak</a></li>
+                                <li class="mb-2"><a href="blog.html" class="text-muted">Blog</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <h6 class="mb-4">Bantuan</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#" class="text-muted">Cara Berbelanja</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">Pembayaran</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">Pengiriman</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">Pengembalian</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                            <h6 class="mb-4">Kontak</h6>
+                            <ul class="list-unstyled text-muted">
+                                <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Yogyakarta, Indonesia</li>
+                                <li class="mb-2"><i class="fas fa-phone me-2"></i> +62 817 9392 239</li>
+                                <li class="mb-2"><i class="fas fa-envelope me-2"></i> merstorejogja@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr class="mt-5">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start">
+                            <p class="text-muted mb-0">&copy; 2025 Mer Store. All rights reserved.</p>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <a href="#" class="text-muted me-3">Syarat & Ketentuan</a>
+                            <a href="#" class="text-muted">Kebijakan Privasi</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
 </body>
+
 </html>
